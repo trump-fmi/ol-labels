@@ -17,14 +17,14 @@
     <div id="map" class="map" style="height:100vh; width:100vw"></div>
     <script>
 
-      var labelServerUrl = "http://seeigel.informatik.uni-stuttgart.de";
+      var labelServerUrl = "http://" + window.location.host;
       var labelServerPort = "8080";
       var tileServerUrl = labelServerUrl;
       var tileServerPort = "80";
       var labelCollectionUrl = labelServerUrl + ":" + labelServerPort + "/labelCollections";
 
-      var tile_url = 'http://seeigel.informatik.uni-stuttgart.de/osm_tiles/{z}/{x}/{y}.png';
-      var tile_url_2 = 'http://seeigel.informatik.uni-stuttgart.de/osm_tiles2/{z}/{x}/{y}.png';
+      var tile_url = tileServerUrl + ':' + tileServerPort + '/osm_tiles/{z}/{x}/{y}.png';
+      var tile_url_2 = tileServerUrl + ':' + tileServerPort + '/osm_tiles2/{z}/{x}/{y}.png';
       var bike_url = 'http://b.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png';
 
       var map = new ol.Map({
